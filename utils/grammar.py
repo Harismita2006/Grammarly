@@ -1,7 +1,7 @@
 import language_tool_python
 
 def grammar_corrections(text):
-    tool = language_tool_python.LanguageTool('en-US')
+    tool = language_tool_python.LanguageToolPublicAPI('en-US')  # Use public API
     matches = tool.check(text)
     suggestions = []
     seen_errors = set()
@@ -29,3 +29,4 @@ def grammar_corrections(text):
                 })
 
     return suggestions
+
